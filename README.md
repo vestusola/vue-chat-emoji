@@ -4,6 +4,7 @@
 ```
 A simple chat emoji for vue
 ```
+![Emoji Picker](/src/assets/demo.png?raw=true "Emoji Picker")
 
 ## Installation
 ```
