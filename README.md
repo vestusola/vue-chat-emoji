@@ -40,7 +40,6 @@ new Vue({
 ```
 
 ## Props
-```
 Name | Type | Description
 --- | --- | ---
 `backgroundColor` | `String` | (Style property) set the emoji container background color. Default: #f5f5f5 or whitesmoke
@@ -48,14 +47,11 @@ Name | Type | Description
 `selectedCategory` | `String` | Set default emoji category. Default: "Smileys & Emotion"
 `color` | `String` | Set emoji container color. Default: "#000"
 `icon` | `String` | Set emoji icon. Default: "&#xf118;"
-```
 
 ## Events
-```
 Name | Description
 --- | ---
 `click` | Emitted when emoji is clicked. 
-```
 ```vue
 <template>
   <div id="app">
