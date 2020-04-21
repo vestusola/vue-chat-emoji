@@ -1,12 +1,21 @@
 {
   "name": "vue-chat-emoji",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "author": {
+    "name": "Oyeleye Festus Olatunbosun",
+    "email": "oyeleyeolatunbosunfestus@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/vestus-ola/vue-chat-emoji.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/vestus-ola/vue-chat-emoji.git#README",
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
