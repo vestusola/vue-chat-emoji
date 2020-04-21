@@ -64,7 +64,7 @@
     </div>
 
     <span class="send-button" @click="toggleEmojiPicker">
-      <i class="icon-emoticon fal" v-html="icon"></i>
+      <i class="icon-emoticon fal" v-html="`&#x${icon};`"></i>
     </span>
   </div>
 </template>
@@ -107,7 +107,7 @@ export default {
     },
     icon: {
       type: String,
-      default: "&#xf118;"
+      default: "f118"
     }
   },
   data() {

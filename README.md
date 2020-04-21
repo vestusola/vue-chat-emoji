@@ -46,7 +46,7 @@ Name | Type | Description
 `radius` | `String` or `Number` | (Style property) Set the emoji container border radius. Default: 8
 `selectedCategory` | `String` | Set default emoji category. Default: "Smileys & Emotion"
 `color` | `String` | Set emoji container color. Default: "#000"
-`icon` | `String` | Set emoji icon. Default: "&#xf118;"
+`icon` | `String` | Set emoji icon. Default: "f118"
 
 ## Events
 Name | Description
