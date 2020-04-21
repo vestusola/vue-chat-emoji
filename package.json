@@ -16,6 +16,7 @@
     "type": "git"
   },
   "homepage": "https://github.com/vestus-ola/vue-chat-emoji#readme",
+  "keywords": ["vue", "emoji", "vue emoji", "chat emoji", "chat"],
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
