@@ -1,6 +1,6 @@
 {
   "name": "vue-chat-emoji",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,7 +16,13 @@
     "type": "git"
   },
   "homepage": "https://github.com/vestus-ola/vue-chat-emoji#readme",
-  "keywords": ["vue", "emoji", "vue emoji", "chat emoji", "chat"],
+  "keywords": [
+    "vue",
+    "emoji",
+    "vue emoji",
+    "chat emoji",
+    "chat"
+  ],
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
