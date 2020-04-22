@@ -2,7 +2,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/vue-chat-emoji.svg)](https://www.npmjs.com/package/vue-chat-emoji)
 [![npm (scoped)](https://img.shields.io/badge/npm-vue--chat--emoji-brightgreen.svg)](https://www.npmjs.com/package/vue-chat-emoji)
 ```
-A simple chat emoji for vue
+A simple chat emoji for vuejs
 ```
 ![Emoji Picker](public/demo.jpg?raw=true "Emoji Picker")
 
