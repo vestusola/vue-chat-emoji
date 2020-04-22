@@ -21,10 +21,11 @@ using inside component
 </template>
 
 <script>
-import Emoji from 'vue-chat-emoji'
+import { VueChatEmoji, emojis } from 'vue-chat-emoji'
+require("vue-chat-emoji/dist/vue-chat-emoji.css");
 export default {
   components: {
-    Emoji
+    Emoji: VueChatEmoji
   }
 }
 </script>
@@ -34,8 +35,10 @@ using globally
 import Vue from "vue";
 import App from "./App.vue";
  
-import Emoji from 'vue-chat-emoji';
- 
+import { VueChatEmoji } from 'vue-chat-emoji';
+Vue.component("Emoji", VueChatEmoji);
+require("vue-chat-emoji/dist/vue-chat-emoji.css");
+
 Vue.config.productionTip = false;
 Vue.use(Emoji);
  
@@ -44,16 +47,7 @@ new Vue({
 }).$mount("#app");
 ```
 
-## Props
-Name | Type | Description
---- | --- | ---
-`backgroundColor` | `String` | (Style property) set the emoji container background color. Default: #f5f5f5 or whitesmoke
-`radius` | `String` or `Number` | (Style property) Set the emoji container border radius. Default: 8
-`selectedCategory` | `String` | Set default emoji category. Default: "Smileys & Emotion"
-`color` | `String` | Set emoji container color. Default: "#000"
-`icon` | `String` | Set emoji icon. Default: "f118"
-
-## Events
+#### Events
 Name | Description
 --- | ---
 `click` | Emitted when emoji is clicked. 
@@ -65,16 +59,73 @@ Name | Description
 </template>
 
 <script>
-import Emoji from 'vue-chat-emoji'
+import { VueChatEmoji, emojis } from 'vue-chat-emoji'
 export default {
   components: {
-    Emoji
+    Emoji: VueChatEmoji
   },
   methods: {
     selectedEmoji(args) {
-      console.log(args);
+      console.log(args); /* return {...}*/
     }
   }
 }
 </script>
 ```
+#### Methods
+```
+List of methods in emojis
+```
+Usage | Description
+--- | ---
+`get()` | List all emojis. Return [{...}]. 
+`all()` | List all emojis. Return [{...}]
+`encodeEmoji()` | Convert emoji character to string. e.g ":birthday_cake:" => "🎂" 
+`decodeEmoji()` | Convert valid emoji key to character. e.g "🎂" => ":birthday_cake:"
+`getRandomEmoji()` | Return random emoji. Return {...}
+`findEmojiByKey()` | Return {...} if found and undefined if not found.
+`findEmojiByName()` | Return {...} if found and undefined if not found.
+`searchEmojiByName()` | Return [{...}] if found and [] if search not found.
+`findEmojiByGroup()` | Return [{...}] if found and [] if search not found.
+
+```vue
+<template>
+  <div id="app">
+    <Emoji />
+  </div>
+</template>
+
+<script>
+import { VueChatEmoji, emojis } from 'vue-chat-emoji'
+export default {
+  components: {
+    Emoji: VueChatEmoji
+  },
+  methods: {
+    getAllEmojis() {
+      console.log(emojis.all()); // [{...}]
+      this.emojifyString("Here is your 🎂.") /* => Here is your :birthday_cake:.*/
+      this.unEmojifyString("Here is your :birthday_cake:.") /* Here is your 🎂.*/
+    },
+    unEmojifyString(str) {
+      console.log(emojis.decodeEmoji(str)) 
+    },
+    emojifyString(str) {
+      console.log(emojis.encodeEmoji(str));
+    }
+  },
+  mounted() {
+    this.getAllEmojis();
+  }
+}
+</script>
+```
+
+## Props
+Name | Type | Description
+--- | --- | ---
+`backgroundColor` | `String` | (Style property) set the emoji container background color. Default: #f5f5f5 or whitesmoke
+`radius` | `String` or `Number` | (Style property) Set the emoji container border radius. Default: 8
+`selectedCategory` | `String` | Set default emoji category. Default: "Smileys & Emotion"
+`color` | `String` | Set emoji container color. Default: "#000"
+`icon` | `String` | Set emoji icon. Default: "f118"

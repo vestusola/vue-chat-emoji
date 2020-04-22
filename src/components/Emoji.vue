@@ -71,7 +71,7 @@
 
 <script>
 import { emoji_categories, skin_tones } from "../emoji/emoji_category";
-import emojis from "../emoji";
+import emoji from "../emoji/index";
 export default {
   props: {
     backgroundColor: {
@@ -172,18 +172,18 @@ export default {
       }
     },
     loadEmojis() {
-      this.emojis = emojis.get();
+      this.emojis = emoji.get();
     },
     getEmojiByCategoryName(category) {
       this.emojiSearch = "";
-      this.emojis = emojis.findEmojiByGroup(category);
+      this.emojis = emoji.findEmojiByGroup(category);
     },
     showEmojiTones() {
       this.showTone = !this.showTone;
     },
     getEmojiBySkinTonesAndCategoryName(tone, category) {
       this.emojiSearch = "";
-      this.emojis = emojis.getEmojiByCategoryAndSkinTone(tone, category);
+      this.emojis = emoji.getEmojiByCategoryAndSkinTone(tone, category);
     },
     getEmojiSkinToneCategory() {
       this.tones = skin_tones;
@@ -205,7 +205,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+// import font-awesome
+@import url("../assets/font-awesome/css/all.min.css");
+
 #body {
   height: 100vh;
 }
@@ -409,14 +412,14 @@ span.send-button {
 }
 @media (max-width: 767px) {
   .emoji-category-group {
-    width: 90vw;
+    width: 94vw;
   }
   .composer-popover-input {
     width: 90vw;
   }
   .composer-popover {
-    width: 88vw;
-    left: 12px;
+    width: 94vw;
+    left: 16px;
     position: absolute;
   }
   .emoji-picker-group {

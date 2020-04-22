@@ -2,14 +2,17 @@
 import Vue from 'vue';
 
 // import component
-import VueChatEmoji from './Emoji.vue';
+import EmojiComponent from './Emoji.vue';
 
 const components = {
-    VueChatEmoji
+  EmojiComponent
 };
 
 Object.keys(components).forEach(component => {
   Vue.component(component, components[component]);
 });
 
-export default components;
+const VueChatEmoji = components;
+
+export { default as VueChatEmoji } from "./Emoji.vue";
+export { default as emojis } from "../emoji/index";

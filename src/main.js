@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 import Vue from "vue";
-import App from "./App";
+import App from "./App.vue";
 import "./components";
 
 Vue.config.productionTip = false;

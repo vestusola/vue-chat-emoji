@@ -1,4 +1,4 @@
-const categories = [
+const emoji_categories = [
   {
     name: "Smileys & Emotion",
     icon: "😀"
@@ -37,7 +37,7 @@ const categories = [
   }
 ];
 
-const skinTones = [
+const skin_tones = [
   {
     name: "No skin tone",
     icon: "🧑"
@@ -64,4 +64,10 @@ const skinTones = [
   }
 ];
 
-module.exports = { emoji_categories: categories, skin_tones: skinTones };
+export { emoji_categories, skin_tones };
+// module.exports { emoji_categories: emoji_categories, skin_tones: skin_tones };
+// export { emoji_categories: emoji_categories, skin_tones: skin_tones };
+// export default { emoji_categories, skin_tones };
+// export { default as emoji_categories } from emoji_categories;
+// export default skin_tones;
+

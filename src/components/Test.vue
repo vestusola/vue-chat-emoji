@@ -1,11 +1,15 @@
 <template>
   <div>
-    <vue-chat-emoji></vue-chat-emoji>
+    <VueChatEmoji></VueChatEmoji>
   </div>
 </template>
 
 <script>
+import { VueChatEmoji, emojis } from "./index";
 export default {
-  name: 'Test'
+  name: 'Test',
+  components: {
+    VueChatEmoji
+  }
 }
 </script>

@@ -51,7 +51,7 @@ Emoji.findEmojiByName = function findEmojiByName(name) {
  */
 Emoji.searchEmojiByName = function searchEmojiByName(name) {
   name = name.toLowerCase();
-  return emojis.filter(item => item.name.toLowerCase().indexOf(name) > -1) || undefined;
+  return emojis.filter(item => item.name.toLowerCase().indexOf(name) > -1) || [];
 };
 
 /**
@@ -70,7 +70,7 @@ Emoji.findEmojiByImage = function findEmojiByImage(emoji) {
  */
 Emoji.findEmojiByGroup = function findEmojiByGroup(groupName) {
   groupName = groupName.toLowerCase();
-  return emojis.filter(item => item.group.toLowerCase() == groupName) || undefined;
+  return emojis.filter(item => item.group.toLowerCase() == groupName) || [];
 };
 
 /**
