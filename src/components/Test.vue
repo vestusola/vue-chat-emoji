@@ -18,7 +18,6 @@ export default {
   },
   methods: {
     test(args) {
-      console.log(args);
       this.open = args;
     }
   },

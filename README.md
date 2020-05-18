@@ -130,3 +130,4 @@ Name | Type | Description
 `color` | `String` | Set emoji container color. Default: "#000"
 `icon` | `String` | Set emoji icon. Default: "f118"
 `open` | `Boolean` | Hide or show emoji container. Default: false
+`v-on:close` | `Event` | Emit $event true or false

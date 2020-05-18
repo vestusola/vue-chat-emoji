@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <span class="send-button" :open="isPickerEnabled" @click="toggleEmojiPicker">
+    <span class="send-button" @click="toggleEmojiPicker">
       <i class="icon-emoticon fal" v-html="`&#x${icon};`"></i>
     </span>
   </div>
@@ -120,10 +120,10 @@ export default {
       current: this.selectedCategory,
       currentTone: "No skin tone",
       emojis: [],
-      isPickerEnabled: false,
       emojiSearch: "",
       showTone: false,
-      tones: []
+      tones: [],
+      isPickerEnabled: false
     };
   },
   methods: {
@@ -151,7 +151,7 @@ export default {
       }
     },
     toggleEmojiPicker() {
-      this.isPickerEnabled = !this.isPickerEnabled;
+      this.isPickerEnabled = !this.open;
       this.$emit("close", this.isPickerEnabled);
     },
     closeEmojiPickerOnOutsideClick(e) {
@@ -348,7 +348,8 @@ span.send-button {
   transition: all 0.2s linear;
   visibility: hidden;
   border: 1px solid #ccc;
-  width: 96vw;
+  width: 95vw;
+  left: 16px;
   height: 250px;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -418,14 +419,31 @@ span.send-button {
 }
 @media (max-width: 767px) {
   .emoji-category-group {
-    width: 94vw;
+    width: 90vw;
   }
   .composer-popover-input {
     width: 90vw;
   }
   .composer-popover {
-    width: 94vw;
-    left: 16px;
+    width: 90vw;
+    left: 18px;
+    position: absolute;
+  }
+  .emoji-picker-group {
+    grid-template-columns: repeat(5, 20%);
+  }
+}
+
+@media (max-width: 600px) {
+  .emoji-category-group {
+    width: 90vw;
+  }
+  .composer-popover-input {
+    width: 85vw;
+  }
+  .composer-popover {
+    width: 90vw;
+    left: 8px;
     position: absolute;
   }
   .emoji-picker-group {
