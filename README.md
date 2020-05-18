@@ -129,3 +129,4 @@ Name | Type | Description
 `selectedCategory` | `String` | Set default emoji category. Default: "Smileys & Emotion"
 `color` | `String` | Set emoji container color. Default: "#000"
 `icon` | `String` | Set emoji icon. Default: "f118"
+`open` | `Boolean` | Hide or show emoji container. Default: false

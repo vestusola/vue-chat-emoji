@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="emoji-wrapper">
     <div
-      :class="`composer-popover composer-emoji-popover ${isPickerEnabled ? 'active': '' }`"
+      :class="`composer-popover composer-emoji-popover ${open ? 'active': '' }`"
       :style="{ 'background-color': backgroundColor, 'border-radius': `${radius}px`, 'color': color }"
     >
       <div class="emoji-picker">
@@ -108,6 +108,10 @@ export default {
     icon: {
       type: String,
       default: "f118"
+    },
+    open: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -147,7 +151,7 @@ export default {
       }
     },
     toggleEmojiPicker() {
-      this.isPickerEnabled = !this.isPickerEnabled;
+      this.open = !this.open;
     },
     closeEmojiPickerOnOutsideClick(e) {
       let vm = this;
@@ -156,7 +160,7 @@ export default {
           e.target.className != "composer-emoji-popover" &&
           e.target.parentNode.classList.length == 0
         ) {
-          vm.isPickerEnabled = false;
+          vm.open = false;
         }
       };
     },

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueChatEmoji></VueChatEmoji>
+    <VueChatEmoji :open="false"></VueChatEmoji>
   </div>
 </template>
 
