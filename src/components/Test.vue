@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueChatEmoji :open="false"></VueChatEmoji>
+    <VueChatEmoji :open="open" v-on:close="test($event)"></VueChatEmoji>
   </div>
 </template>
 
@@ -10,6 +10,17 @@ export default {
   name: 'Test',
   components: {
     VueChatEmoji
-  }
+  },
+  data() {
+    return {
+      open: false
+    }
+  },
+  methods: {
+    test(args) {
+      console.log(args);
+      this.open = args;
+    }
+  },
 }
 </script>

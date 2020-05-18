@@ -1,7 +1,7 @@
 <template>
   <div id="body" class="emoji-wrapper">
     <div
-      :class="`composer-popover composer-emoji-popover ${open ? 'active': '' }`"
+      :class="`composer-popover composer-emoji-popover ${isPickerEnabled ? 'active': '' }`"
       :style="{ 'background-color': backgroundColor, 'border-radius': `${radius}px`, 'color': color }"
     >
       <div class="emoji-picker">
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <span class="send-button" @click="toggleEmojiPicker">
+    <span class="send-button" :open="isPickerEnabled" @click="toggleEmojiPicker">
       <i class="icon-emoticon fal" v-html="`&#x${icon};`"></i>
     </span>
   </div>
@@ -151,7 +151,8 @@ export default {
       }
     },
     toggleEmojiPicker() {
-      this.open = !this.open;
+      this.isPickerEnabled = !this.isPickerEnabled;
+      this.$emit("close", this.isPickerEnabled);
     },
     closeEmojiPickerOnOutsideClick(e) {
       let vm = this;
@@ -160,7 +161,8 @@ export default {
           e.target.className != "composer-emoji-popover" &&
           e.target.parentNode.classList.length == 0
         ) {
-          vm.open = false;
+          vm.isPickerEnabled = false;
+          vm.$emit("close", vm.isPickerEnabled);
         }
       };
     },
