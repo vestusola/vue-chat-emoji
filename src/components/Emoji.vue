@@ -338,9 +338,7 @@ span.send-button {
   transition: all 0.2s linear;
   visibility: hidden;
   border: 1px solid #ccc;
-  width: 93%;
-  padding-right: 2%;
-  margin-right: 2%;
+  width: 96%;
   height: 250px;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -391,7 +389,7 @@ span.send-button {
   justify-content: space-evenly;
   justify-items: center;
   flex-direction: row;
-  width: 94vw;
+  width: 100%;
   height: 50px;
   vertical-align: middle;
   border-top: 2px solid #ccc;
@@ -411,8 +409,8 @@ span.send-button {
   .emoji-picker-group {
     grid-template-columns: repeat(5, 20%);
   }
-  .emoji-category-group {
-    width: 96vw;
+  .composer-popover {
+    width: 90%;
   }
 }
 .emoji-picker-emoji {
