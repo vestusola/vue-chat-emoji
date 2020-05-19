@@ -154,17 +154,6 @@ export default {
       this.isPickerEnabled = !this.isPickerEnabled;
       this.$emit("toggle");
     },
-    closeEmojiPickerOnOutsideClick(e) {
-      let vm = this;
-      document.getElementById("emoji-wrapper").onclick = function(e) {
-        if (
-          e.target.className != "composer-emoji-popover" &&
-          e.target.parentNode.classList.length == 0
-        ) {
-          vm.isPickerEnabled = false;
-        }
-      };
-    },
     searchEmoji() {
       var input = this.emojiSearch;
       let el = this.$refs["emoji_body"].querySelectorAll(`.emoji-picker-emoji`);
@@ -197,7 +186,6 @@ export default {
   mounted() {
     this.getEmojiCategories();
     this.getEmojiByCategoryName(this.current);
-    this.closeEmojiPickerOnOutsideClick();
   },
   watch: {
     current() {
@@ -350,10 +338,10 @@ span.send-button {
   transition: all 0.2s linear;
   visibility: hidden;
   border: 1px solid #ccc;
-  width: 92%;
+  width: 93%;
   padding-right: 2%;
   margin-right: 2%;
-  margin-left: 2%;
+  // margin-left: 2%;
   height: 250px;
   overflow-y: hidden;
   overflow-x: hidden;
