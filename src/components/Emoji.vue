@@ -1,5 +1,5 @@
 <template>
-  <div id="body" class="emoji-wrapper">
+  <div id="emoji-wrapper" class="emoji-wrapper">
     <div
       :class="`composer-popover composer-emoji-popover ${isPickerEnabled ? 'active': '' }`"
       :style="{ 'background-color': backgroundColor, 'border-radius': `${radius}px`, 'color': color }"
@@ -123,7 +123,7 @@ export default {
       emojiSearch: "",
       showTone: false,
       tones: [],
-      isPickerEnabled: false
+      isPickerEnabled: this.open
     };
   },
   methods: {
@@ -151,18 +151,17 @@ export default {
       }
     },
     toggleEmojiPicker() {
-      this.isPickerEnabled = !this.open;
-      this.$emit("close", this.isPickerEnabled);
+      this.isPickerEnabled = !this.isPickerEnabled;
+      this.$emit("toggle");
     },
     closeEmojiPickerOnOutsideClick(e) {
       let vm = this;
-      document.getElementById("body").onclick = function(e) {
+      document.getElementById("emoji-wrapper").onclick = function(e) {
         if (
           e.target.className != "composer-emoji-popover" &&
           e.target.parentNode.classList.length == 0
         ) {
           vm.isPickerEnabled = false;
-          vm.$emit("close", vm.isPickerEnabled);
         }
       };
     },
@@ -193,7 +192,7 @@ export default {
     },
     getEmojiSkinToneCategory() {
       this.tones = skin_tones;
-    }
+    },
   },
   mounted() {
     this.getEmojiCategories();
@@ -206,8 +205,15 @@ export default {
     },
     currentTone() {
       this.$refs["emoji_body"].scrollTop = 0;
+    },
+    open() {
+      if (this.open == false) {
+        this.isPickerEnabled = false;
+      } else {
+        this.isPickerEnabled = true;
+      }
     }
-  }
+  },
 };
 </script>
 
@@ -215,7 +221,7 @@ export default {
 // import font-awesome
 @import url("../assets/font-awesome/css/all.min.css");
 
-#body {
+body {
   height: 100vh;
 }
 .emoji-category {
@@ -279,11 +285,9 @@ export default {
   left: 50%;
 }
 .fixed-bottom {
-  width: 100vw;
+  width: 100%;
   bottom: 0;
   position: fixed;
-  padding-right: 10px;
-  padding-left: 10px;
   margin-bottom: 10px;
 }
 span.send-button {
@@ -335,9 +339,7 @@ span.send-button {
   -moz-osx-font-smoothing: grayscale;
 }
 .composer-popover {
-  right: 20px;
   position: absolute;
-  padding: 5px 10px;
   vertical-align: middle;
   box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.08);
   transition-duration: 200ms;
@@ -348,12 +350,13 @@ span.send-button {
   transition: all 0.2s linear;
   visibility: hidden;
   border: 1px solid #ccc;
-  width: 95vw;
-  left: 16px;
+  width: 92%;
+  padding-right: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
   height: 250px;
   overflow-y: hidden;
   overflow-x: hidden;
-  align-content: center;
 }
 .composer-popover.active {
   visibility: visible;
@@ -365,9 +368,10 @@ span.send-button {
   font-weight: 700;
   font-size: 14px;
   color: #777;
-  padding-left: 25px;
+  padding-left: 20px;
+  padding-top: 10px;
   height: 40px;
-  width: 98vw;
+  width: 100%;
   border: none;
   outline: none;
 }
@@ -380,7 +384,6 @@ span.send-button {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-right: 20px;
   padding-bottom: 10px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -394,14 +397,14 @@ span.send-button {
 }
 .composer-popover-body::-webkit-scrollbar-thumb {
   background: #bdbdbd;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .emoji-category-group {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   justify-items: center;
   flex-direction: row;
-  width: 96vw;
+  width: 94vw;
   height: 50px;
   vertical-align: middle;
   border-top: 2px solid #ccc;
@@ -418,36 +421,11 @@ span.send-button {
   grid-template-columns: repeat(10, 10%);
 }
 @media (max-width: 767px) {
-  .emoji-category-group {
-    width: 90vw;
-  }
-  .composer-popover-input {
-    width: 90vw;
-  }
-  .composer-popover {
-    width: 90vw;
-    left: 18px;
-    position: absolute;
-  }
   .emoji-picker-group {
     grid-template-columns: repeat(5, 20%);
   }
-}
-
-@media (max-width: 600px) {
   .emoji-category-group {
-    width: 90vw;
-  }
-  .composer-popover-input {
-    width: 85vw;
-  }
-  .composer-popover {
-    width: 90vw;
-    left: 8px;
-    position: absolute;
-  }
-  .emoji-picker-group {
-    grid-template-columns: repeat(5, 20%);
+    width: 96vw;
   }
 }
 .emoji-picker-emoji {
@@ -465,8 +443,5 @@ span.send-button {
   transition-delay: 60ms;
   font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji,
     Segoe UI Symbol, Android Emoji, EmojiSymbols;
-}
-.emoji-wrapper {
-  padding: 10px 10px;
 }
 </style>

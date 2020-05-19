@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <VueChatEmoji :open="open" v-on:close="test($event)"></VueChatEmoji>
+  <div id="main-body">
+    <VueChatEmoji :open="open" @toggle="showOrHide"></VueChatEmoji>
   </div>
 </template>
 
@@ -13,13 +13,13 @@ export default {
   },
   data() {
     return {
-      open: false
+      open: true
     }
   },
   methods: {
-    test(args) {
-      this.open = args;
+    showOrHide() {
+      this.open = !this.open;
     }
-  },
+  }
 }
 </script>
