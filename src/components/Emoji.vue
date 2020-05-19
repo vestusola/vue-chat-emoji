@@ -341,7 +341,6 @@ span.send-button {
   width: 93%;
   padding-right: 2%;
   margin-right: 2%;
-  // margin-left: 2%;
   height: 250px;
   overflow-y: hidden;
   overflow-x: hidden;
