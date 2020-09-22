@@ -3,6 +3,8 @@
     <VueChatEmoji 
       :open="open" 
       @toggle="showOrHide"
+      width="width"
+      height="width"
     >
     </VueChatEmoji>
   </div>
@@ -17,7 +19,9 @@ export default {
   },
   data() {
     return {
-      open: true
+      open: true,
+      width: "96%",
+      height: "250px"
     }
   },
   methods: {
