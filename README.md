@@ -131,3 +131,5 @@ Name | Type | Description
 `icon` | `String` | Set emoji icon. Default: "f118"
 `open` | `Boolean` | Hide or show emoji container. Default: false
 `toggle` | `Event` | To hide or show emoji container
+`width` | `String` | Set emoji container width. Default: 96%
+`height` | `String` | Set emoji container height. Default: 250px

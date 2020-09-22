@@ -1,6 +1,10 @@
 <template>
   <div id="main-body">
-    <VueChatEmoji :open="open" @toggle="showOrHide"></VueChatEmoji>
+    <VueChatEmoji 
+      :open="open" 
+      @toggle="showOrHide"
+    >
+    </VueChatEmoji>
   </div>
 </template>
 

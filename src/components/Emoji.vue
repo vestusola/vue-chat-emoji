@@ -2,7 +2,13 @@
   <div id="emoji-wrapper" class="emoji-wrapper">
     <div
       :class="`composer-popover composer-emoji-popover ${isPickerEnabled ? 'active': '' }`"
-      :style="{ 'background-color': backgroundColor, 'border-radius': `${radius}px`, 'color': color }"
+      :style="{ 
+        'background-color': backgroundColor, 
+        'border-radius': `${radius}px`, 
+        'color': color,
+        'width': width,
+        'height': height
+      }"
     >
       <div class="emoji-picker">
         <input
@@ -112,6 +118,14 @@ export default {
     open: {
       type: Boolean,
       default: false
+    },
+    width: {
+      type: String,
+      default: "96%"
+    },
+    height: {
+      type: String,
+      default: "250px"
     }
   },
   data() {
