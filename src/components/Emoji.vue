@@ -352,8 +352,6 @@ span.send-button {
   transition: all 0.2s linear;
   visibility: hidden;
   border: 1px solid #ccc;
-  width: 96%;
-  height: 250px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
