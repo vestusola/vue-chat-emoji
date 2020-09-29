@@ -133,3 +133,41 @@ Name | Type | Description
 `toggle` | `Event` | To hide or show emoji container
 `width` | `String` | Set emoji container width. Default: 96%
 `height` | `String` | Set emoji container height. Default: 250px
+
+## Using without NPM
+```html
+  <!DOCTYPE html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Vue Starter</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="https://unpkg.com/vue-chat-emoji@1.1.25/dist/vue-chat-emoji.min.css">
+    </head>
+    <body>
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+      <div id="app">
+        <Emoji />
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+      <script src="https://unpkg.com/vue-chat-emoji@1.1.25/dist/vue-chat-emoji.min.js"></script>
+      <script>
+        new Vue({
+          el: "#app",
+          components: { Emoji: VueChatEmoji.VueChatEmoji },
+          created() {
+            
+          }
+        })
+      </script>
+    </body>
+  </html>
+```
