@@ -128,7 +128,7 @@ Name | Type | Description
 `radius` | `String` or `Number` | (Style property) Set the emoji container border radius. Default: 8
 `selectedCategory` | `String` | Set default emoji category. Default: "Smileys & Emotion"
 `color` | `String` | Set emoji container color. Default: "#000"
-`icon` | `String` | Set emoji icon. Default: "f118"
+`icon` | `String` | Set emoji icon. Default: "fa fa-smile"
 `open` | `Boolean` | Hide or show emoji container. Default: false
 `toggle` | `Event` | To hide or show emoji container
 `width` | `String` | Set emoji container width. Default: 96%
@@ -147,6 +147,7 @@ Name | Type | Description
       <title>Vue Starter</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" />
       <link rel="stylesheet" href="https://unpkg.com/vue-chat-emoji@1.1.25/dist/vue-chat-emoji.min.css">
     </head>
     <body>

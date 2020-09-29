@@ -70,7 +70,7 @@
     </div>
 
     <span class="send-button" @click="toggleEmojiPicker">
-      <i class="icon-emoticon fal" v-html="`&#x${icon};`"></i>
+      <i :class="'icon-emoticon ' + icon"></i>
     </span>
   </div>
 </template>
@@ -113,7 +113,7 @@ export default {
     },
     icon: {
       type: String,
-      default: "f118"
+      default: "fa fa-smile"
     },
     open: {
       type: Boolean,
@@ -220,9 +220,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// import font-awesome
-@import url("../assets/font-awesome/css/all.min.css");
-
 body {
   height: 100vh;
   max-width: 100vw;
@@ -282,7 +279,6 @@ body {
   font-size: 20px;
 }
 .icon-emoticon {
-  color: #000;
   font-size: 24px;
   top: 50%;
   left: 50%;

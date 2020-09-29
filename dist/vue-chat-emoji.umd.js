@@ -22497,7 +22497,7 @@
       },
       icon: {
         type: String,
-        default: "f118"
+        default: "fa fa-smile"
       },
       open: {
         type: Boolean,
@@ -22842,12 +22842,7 @@
         _c(
           "span",
           { staticClass: "send-button", on: { click: _vm.toggleEmojiPicker } },
-          [
-            _c("i", {
-              staticClass: "icon-emoticon fal",
-              domProps: { innerHTML: _vm._s("&#x" + _vm.icon + ";") }
-            })
-          ]
+          [_c("i", { class: "icon-emoticon " + _vm.icon })]
         )
       ]
     )
@@ -22858,7 +22853,7 @@
     /* style */
     var __vue_inject_styles__ = undefined;
     /* scoped */
-    var __vue_scope_id__ = "data-v-4be43dd2";
+    var __vue_scope_id__ = "data-v-241a1a49";
     /* module identifier */
     var __vue_module_identifier__ = undefined;
     /* functional template */
