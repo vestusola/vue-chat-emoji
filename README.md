@@ -159,7 +159,7 @@ Name | Type | Description
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-      <script src="https://unpkg.com/vue-chat-emoji@1.1.25/dist/vue-chat-emoji.min.js"></script>
+      <script src="https://unpkg.com/vue-chat-emoji@version/dist/vue-chat-emoji.min.js"></script>
       <script>
         new Vue({
           el: "#app",
