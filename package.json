@@ -4,6 +4,9 @@
   "private": false,
   "description": "A simple chat emoji for vuejs",
   "main": "dist/vue-chat-emoji.min.js",
+  "module": "dist/vue-chat-emoji.esm.js",
+  "unpkg": "dist/vue-chat-emoji.min.js",
+  "style": "dist/vue-chat-emoji.css",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build-bundle": "vue-cli-service build --target lib --name vue-chat-emoji ./src/components/index.js",
@@ -31,8 +34,7 @@
     "chat"
   ],
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.12"
+    "core-js": "^3.6.4"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
@@ -49,7 +51,8 @@
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-vue": "^5.0.1",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "vue": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,

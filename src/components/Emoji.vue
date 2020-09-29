@@ -338,7 +338,7 @@ span.send-button {
   -moz-osx-font-smoothing: grayscale;
 }
 .composer-popover {
-  position: relative;
+  position: absolute;
   box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.08);
   transition-duration: 200ms;
   transition-delay: 0ms;
