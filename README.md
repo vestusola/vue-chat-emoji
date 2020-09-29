@@ -37,7 +37,7 @@ import App from "./App.vue";
  
 import { VueChatEmoji } from 'vue-chat-emoji';
 Vue.component("Emoji", VueChatEmoji);
-require("vue-chat-emoji/dist/vue-chat-emoji.css");
+require("vue-chat-emoji/dist/vue-chat-emoji.min.css");
 
 Vue.config.productionTip = false;
 Vue.use(Emoji);
