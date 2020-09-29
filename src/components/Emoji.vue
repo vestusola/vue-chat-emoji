@@ -225,6 +225,7 @@ export default {
 
 body {
   height: 100vh;
+  max-width: 100vw;
 }
 .emoji-category {
   vertical-align: middle;
@@ -341,15 +342,14 @@ span.send-button {
   -moz-osx-font-smoothing: grayscale;
 }
 .composer-popover {
-  position: absolute;
-  vertical-align: middle;
+  position: relative;
   box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.08);
   transition-duration: 200ms;
   transition-delay: 0ms;
   transform-style: flat;
   transform-origin: 50% 50% 0;
   opacity: 0;
-  transition: all 0.2s linear;
+  transition: ease-in-out 0.2s linear;
   visibility: hidden;
   border: 1px solid #ccc;
   overflow-y: hidden;
@@ -359,7 +359,7 @@ span.send-button {
   visibility: visible;
   opacity: 1;
   bottom: 70px;
-  position: fixed;
+  position: absolute;
 }
 .composer-popover-input {
   font-weight: 700;

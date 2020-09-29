@@ -3,8 +3,8 @@
     <VueChatEmoji 
       :open="open" 
       @toggle="showOrHide"
-      width="width"
-      height="width"
+      :width="width"
+      :height="height"
     >
     </VueChatEmoji>
   </div>

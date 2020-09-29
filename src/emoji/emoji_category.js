@@ -65,9 +65,3 @@ const skin_tones = [
 ];
 
 export { emoji_categories, skin_tones };
-// module.exports { emoji_categories: emoji_categories, skin_tones: skin_tones };
-// export { emoji_categories: emoji_categories, skin_tones: skin_tones };
-// export default { emoji_categories, skin_tones };
-// export { default as emoji_categories } from emoji_categories;
-// export default skin_tones;
-
