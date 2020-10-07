@@ -135,7 +135,6 @@ Name | Type | Description
 `height` | `String` | Set emoji container height. Default: 250px
 `searchLabel` | `String` | Set search input field placeholer. Default: "Search"
 
-
 ## Using without NPM
 ```html
   <!DOCTYPE html>
