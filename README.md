@@ -133,6 +133,8 @@ Name | Type | Description
 `toggle` | `Event` | To hide or show emoji container
 `width` | `String` | Set emoji container width. Default: 96%
 `height` | `String` | Set emoji container height. Default: 250px
+`searchLabel` | `String` | Set search input field placeholer. Default: "Search"
+
 
 ## Using without NPM
 ```html

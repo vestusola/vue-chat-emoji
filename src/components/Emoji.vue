@@ -13,7 +13,7 @@
       <div class="emoji-picker">
         <input
           class="composer-popover-input"
-          placeholder="Search"
+          :placeholder="searchLabel"
           name="search"
           id="search"
           autocomplete="off"
@@ -126,6 +126,10 @@ export default {
     height: {
       type: String,
       default: "250px"
+    },
+    searchLabel: {
+      type: String,
+      default: "Search"
     }
   },
   data() {
