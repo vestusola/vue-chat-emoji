@@ -1,10 +1,16 @@
 # Vue Chat Emoji
 [![npm (scoped)](https://img.shields.io/npm/v/vue-chat-emoji.svg)](https://www.npmjs.com/package/vue-chat-emoji)
 [![npm (scoped)](https://img.shields.io/badge/npm-vue--chat--emoji-brightgreen.svg)](https://www.npmjs.com/package/vue-chat-emoji)
-```
-A simple chat emoji for vuejs
-```
-![Emoji Picker](public/demo.jpg?raw=true "Emoji Picker")
+
+A simple chat emoji integration for vuejs!
+
+* Emoji picker
+* Input conversion (`hello :birthday_cake:!` => hello 🎂 !)
+
+
+## Preview
+
+![Vue Chat Emoji list](public/demo.png?raw=true "Vue Chat Emoji list")
 
 ## Installation
 ```
