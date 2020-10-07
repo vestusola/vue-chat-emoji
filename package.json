@@ -1,6 +1,6 @@
 {
   "name": "vue-chat-emoji",
-  "version": "1.1.26",
+  "version": "1.1.27",
   "private": false,
   "description": "A simple chat emoji for vuejs",
   "main": "dist/vue-chat-emoji.esm.js",
@@ -32,6 +32,17 @@
     "vue emoji",
     "chat emoji",
     "chat"
+  ],
+  "contributors": [
+    {
+      "name": "Oyeleye Festus Olatunbosun <vestusola>",
+      "email": "oyeleyeolatunbosunfestus@gmail.com"
+    },
+    {
+      "name": "PatricNox",
+      "email": "hello@patricnox.info",
+      "url": "https://patricnox.info"
+    }
   ],
   "dependencies": {
     "core-js": "^3.6.4"

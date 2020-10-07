@@ -1,13 +1,15 @@
 <template>
   <div id="emoji-wrapper" class="emoji-wrapper">
     <div
-      :class="`composer-popover composer-emoji-popover ${isPickerEnabled ? 'active': '' }`"
-      :style="{ 
-        'background-color': backgroundColor, 
-        'border-radius': `${radius}px`, 
+      :class="`composer-popover composer-emoji-popover ${
+        isPickerEnabled ? 'active' : ''
+      }`"
+      :style="{
+        'background-color': backgroundColor,
+        'border-radius': `${radius}px`,
         'color': color,
         'width': width,
-        'height': height
+        'height': height,
       }"
     >
       <div class="emoji-picker">
@@ -20,23 +22,24 @@
           @input="searchEmoji"
           v-model="emojiSearch"
         />
-        <div class="tone-category-group">
-          <span
-            v-show="showTone"
-            v-for="(tone, index) in tones"
-            :class="['tone-category', { active: tone.name == currentTone }]"
-            :key="index"
-            @click="selectedTone(tone)"
-          >
-            <span
-              class="tone-category-item"
-              style="font-size: 20px;"
-              :title="tone.name"
-              v-html="tone.icon"
-            />
-          </span>
-        </div>
         <div class="composer-popover-body-container">
+          <div class="tone-category-group" v-if="showTone">
+            <span
+              v-show="showTone"
+              v-for="(tone, index) in tones"
+              :class="['tone-category', { active: tone.name == currentTone }]"
+              :key="index"
+              @click="selectedTone(tone)"
+            >
+              <span
+                class="tone-category-item"
+                style="font-size: 20px"
+                :title="tone.name"
+                v-html="tone.icon"
+              />
+            </span>
+          </div>
+          <div v-else style="border-top: 1px solid #ccc"></div>
           <div class="composer-popover-body" ref="emoji_body">
             <div class="emoji-picker-groups">
               <div class="grid-emojis emoji-picker-group">
@@ -46,7 +49,8 @@
                   :title="emoji.name"
                   class="emoji-picker-emoji"
                   @click="$emit('click', emoji)"
-                >{{ emoji.emoji }}</span>
+                  >{{ emoji.emoji }}</span
+                >
               </div>
             </div>
           </div>
@@ -59,7 +63,7 @@
             >
               <span
                 class="emoji-category"
-                style="font-size: 18px;"
+                style="font-size: 18px"
                 :title="category.name"
                 v-html="category.icon"
               />
@@ -82,55 +86,53 @@ export default {
   props: {
     backgroundColor: {
       type: String,
-      default: "#f5f5f5"
+      default: "#f5f5f5",
     },
     radius: {
       type: [String, Number],
-      default: 8
+      default: 8,
     },
     selectedCategory: {
       type: String,
       default: "Smileys & Emotion",
       validator(prop) {
-        return (
-          [
-            "Smileys & Emotion",
-            "People & Body",
-            "Animals & Nature",
-            "Food & Drink",
-            "Travel & Places",
-            "Activities",
-            "Objects",
-            "Symbols",
-            "Flags"
-          ].filter(item => item.toLowerCase().indexOf(prop.toLowerCase()) > -1)
-        );
-      }
+        return [
+          "Smileys & Emotion",
+          "People & Body",
+          "Animals & Nature",
+          "Food & Drink",
+          "Travel & Places",
+          "Activities",
+          "Objects",
+          "Symbols",
+          "Flags",
+        ].filter((item) => item.toLowerCase().indexOf(prop.toLowerCase()) > -1);
+      },
     },
     color: {
       type: String,
-      default: "#000"
+      default: "#000",
     },
     icon: {
       type: String,
-      default: "fa fa-smile"
+      default: "fa fa-smile",
     },
     open: {
       type: Boolean,
-      default: false
+      default: false,
     },
     width: {
       type: String,
-      default: "96%"
+      default: "96%",
     },
     height: {
       type: String,
-      default: "250px"
+      default: "250px",
     },
     searchLabel: {
       type: String,
-      default: "Search"
-    }
+      default: "Search",
+    },
   },
   data() {
     return {
@@ -141,7 +143,7 @@ export default {
       emojiSearch: "",
       showTone: false,
       tones: [],
-      isPickerEnabled: this.open
+      isPickerEnabled: this.open,
     };
   },
   methods: {
@@ -153,19 +155,23 @@ export default {
       if (this.current == "People & Body") {
         this.getEmojiSkinToneCategory();
         this.showTone = true;
+        this.$refs["emoji_body"].style.top = "95px";
         this.getEmojiBySkinTonesAndCategoryName(this.currentTone, this.current);
       } else {
         this.showTone = false;
+        this.$refs["emoji_body"].style.top = "58px";
         this.getEmojiByCategoryName(this.current);
       }
     },
     selectedTone(tone) {
       this.currentTone = tone.name;
       if (this.current == "People & Body") {
+        this.$refs["emoji_body"].style.top = "95px";
         this.getEmojiBySkinTonesAndCategoryName(this.currentTone, this.current);
       } else {
         this.showTone = false;
         this.getEmojiByCategoryName(this.current);
+        this.$refs["emoji_body"].style.top = "58px";
       }
     },
     toggleEmojiPicker() {
@@ -218,7 +224,7 @@ export default {
       } else {
         this.isPickerEnabled = true;
       }
-    }
+    },
   },
 };
 </script>
@@ -258,8 +264,8 @@ body {
 }
 .tone-category-group {
   border-top: 1px solid #ccc;
-  margin-bottom: 30px;
-  height: 50px;
+  border-bottom: 1px solid #ccc;
+  height: 40px;
 }
 .tone-category.active {
   border-bottom: 2px solid #337ab7;
@@ -269,7 +275,7 @@ body {
 .tone-category-item {
   vertical-align: middle;
   display: inline-block;
-  margin: 0 5px;
+  margin: 2px 10px;
   cursor: pointer;
 }
 .category.active {
@@ -377,7 +383,7 @@ span.send-button {
 }
 .composer-popover-body {
   position: absolute;
-  top: 38px;
+  top: 58px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -440,5 +446,11 @@ span.send-button {
   transition-delay: 60ms;
   font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji,
     Segoe UI Symbol, Android Emoji, EmojiSymbols;
+}
+.emoji-picker-emoji:hover {
+  transition-delay: 0ms;
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
 }
 </style>
