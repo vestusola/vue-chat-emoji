@@ -377,7 +377,7 @@ span.send-button {
 }
 .composer-popover-body {
   position: absolute;
-  top: 80px;
+  top: 38px;
   left: 0;
   right: 0;
   bottom: 0;
