@@ -97,7 +97,7 @@ Usage | Description
 ```vue
 <template>
   <div id="app">
-    <Emoji />
+    <Emoji searchLabel="Search emoji here" />
   </div>
 </template>
 
@@ -139,7 +139,7 @@ Name | Type | Description
 `toggle` | `Event` | To hide or show emoji container
 `width` | `String` | Set emoji container width. Default: 96%
 `height` | `String` | Set emoji container height. Default: 250px
-`searchLabel` | `String` | Set search input field placeholer. Default: "Search"
+`searchLabel` | `String` | Set search input field placeholder. Default: "Search". Note that HTML attributes are case-insensitive and camelCased props need to use their kebab-case equivalents when using in-DOM templates. You should probably use "search-label" instead of "searchLabel".
 
 ## Using without NPM
 ```html
@@ -162,7 +162,7 @@ Name | Type | Description
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
       <div id="app">
-        <Emoji />
+        <Emoji search-label="Search emoji here" />
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
