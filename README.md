@@ -155,7 +155,7 @@ Name | Type | Description
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw==" crossorigin="anonymous" />
-      <link rel="stylesheet" href="https://unpkg.com/vue-chat-emoji@version/dist/vue-chat-emoji.min.css">
+      <link rel="stylesheet" href="https://unpkg.com/vue-chat-emoji@1.1.27/dist/vue-chat-emoji.min.css">
     </head>
     <body>
       <!--[if lt IE 7]>
@@ -166,7 +166,7 @@ Name | Type | Description
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-      <script src="https://unpkg.com/vue-chat-emoji@version/dist/vue-chat-emoji.min.js"></script>
+      <script src="https://unpkg.com/vue-chat-emoji@1.1.27/dist/vue-chat-emoji.min.js"></script>
       <script>
         new Vue({
           el: "#app",
